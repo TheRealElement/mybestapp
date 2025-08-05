@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lovable AI</title>
+</head>
+<body>
+    <h1>Ask Lovable AI ✨</h1>
+    <input type="text" id="question" placeholder="Ask something...">
+    <button onclick="ask()">Ask</button>
+    <p id="response"></p>
+
+    <script>
+        async function ask() {
+            const question = document.getElementById('question').value;
+            const res = await fetch('/api/ask', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ question })
+            });
+            const data = await res.json();
+            document.getElementById('response').innerText = data.reply;
+        }
+    </script>
+</body>
+</html>

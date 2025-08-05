@@ -1,0 +1,14 @@
+
+# Ignore Visual Studio folder
+.vs/
+*.vsidx
+
+# Node.js dependencies
+node_modules/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
